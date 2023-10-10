@@ -14,6 +14,7 @@ int main() {
 
 	printf("ouverture de l'application \n");
 	printf("");
+	printf("Voulez-vous consulter la liste des Auteurs ?");
 	displayHeaderTab();
 	printf("");
 	list();

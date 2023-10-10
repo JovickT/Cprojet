@@ -5,7 +5,7 @@
 struct livre {
 	int id;
 	char titre[250];
-	char datePublication[10];
+	char datePublication[12];
 	double prix;
 	//struct Editeurs[];
 	//struct Auteurs[];
@@ -35,7 +35,9 @@ void list() {
 	tab[3] = l4;
 	tab[4] = l5;
 
-	for (int i = 1; i < sizeof(tab); i++)
+	int lengthTab = 5;
+
+	for (int i = 1; i < lengthTab; i++)
 	{
 		printf("|%d", tab[i].id);
 		printf("  |%s", tab[i].titre);
