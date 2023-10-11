@@ -2,8 +2,8 @@
 #define LIVRE_H
 
 struct livre;
-void list();
-void displayHeaderTab();
+void listLivre();
+void displayHeaderTabLivre();
 
 #endif LIVRE_H
 

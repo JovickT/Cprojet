@@ -1,8 +1,7 @@
 #ifndef LABDD_H
 #define LABDD_H
 
-
-void connexion();
+void connexion(int affichage);
 
 #endif LABDD_H
 

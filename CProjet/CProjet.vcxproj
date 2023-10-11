@@ -130,12 +130,14 @@
     <ClCompile Include="App.c" />
     <ClCompile Include="Auteur\auteur.c" />
     <ClCompile Include="Bdd\laBdd.c" />
+    <ClCompile Include="begin\beginning.c" />
     <ClCompile Include="Editeur\editeur.c" />
     <ClCompile Include="Livre\livre.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auteur\auteur.h" />
     <ClInclude Include="Bdd\laBdd.h" />
+    <ClInclude Include="begin\beginning.h" />
     <ClInclude Include="Editeur\editeur.h" />
     <ClInclude Include="Livre\livre.h" />
   </ItemGroup>

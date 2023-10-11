@@ -1,25 +1,37 @@
 #include <stdio.h>
 #include "../Auteur/auteur.h"
+#include "../Editeur/editeur.h"
+#include "../Livre/livre.h"
+#include "../begin/beginning.h"
 
 #define _CRT_secure_no_warnings
 
 enum navs {
-	Auteurs = 1,
-	Editeurs,
-	Livres
+	auteurs = 1,
+	editeurs,
+	livres
 };
 
-void connexion(affichage) {
-	
-	switch (affichage)
+void connexion(int affichage) {
+
+	enum navs choix = affichage;
+	//printf("choix %d et affichage %d\n", choix,affichage);
+	switch (choix)
 	{
-		case 1:
+		case auteurs:
+			displayHeaderTabAuteur();
+			listAuteur();
 			break;
-		case 2:
+		case editeurs:
+			displayHeaderTabEditeur();
+			listEditeur();
 			break;
-		case 3:
+		case livres:
+			displayHeaderTabLivre();
+			listLivre();
 			break;
 		default:
+			start();
 			break;
 	}
 }

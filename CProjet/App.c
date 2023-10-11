@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include "Livre/livre.h"
@@ -5,18 +6,15 @@
 #include "Auteur/auteur.h"
 
 
+
 /*Application pour libraires qui permettrait aux libraires de consulter, ajouter, modifier et supprimer des livres d'une base de données
 * contenant des donnéesd'auteurs, d'éditeurs et de livres.
 */
 
+
+
 int main() {
-	int tab[20];
-
 	printf("ouverture de l'application \n");
-	printf("");
-	printf("Voulez-vous consulter la liste des Auteurs ?");
-	displayHeaderTab();
-	printf("");
-	list();
 
+	start();
 }
