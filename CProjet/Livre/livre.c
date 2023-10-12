@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include "../Editeur/editeur.h"
 
 struct livre {
 	int id;
@@ -42,7 +41,7 @@ void listLivre() {
 		printf("|%d", tab[i].id);
 		printf("  |%s", tab[i].titre);
 		printf("           |%s", tab[i].datePublication);
-		printf("                |%g", tab[i].prix);
+		printf("                |%lf", tab[i].prix);
 		printf(" |\n");
 	}
 	
@@ -58,24 +57,25 @@ void ajouterLivre() {
 	scanf("%s", &datePublication);
 
 	printf("\nPrix: ");
-	scanf("%g", &prix);
+	scanf("%lf", &prix);
 
 
 	struct livre nouveauLivre;
 	nouveauLivre.id = lengthTabLivre;
 	strncpy(nouveauLivre.titre, titre, sizeof(nouveauLivre.titre));
 	strncpy(nouveauLivre.datePublication, datePublication, sizeof(nouveauLivre.datePublication));
-	strncpy(nouveauLivre.prix, prix, sizeof(nouveauLivre.prix));
+	nouveauLivre.prix = prix;
 
 	// Ajoutez le nouvel auteur au tableau existant
-	if (lengthTabLivre < 150) {
+	//printf("taille: %d", lengthTabLivre);
+	if (lengthTabLivre < 50) {
 		tab[lengthTabLivre] = nouveauLivre;
 		lengthTabLivre++;
 
 		printf("\nAuteur ajoute avec succes.\n");
 	}
 	else {
-		printf("\nLe tableau est plein. Impossible d'ajouter plus de livre.\n");
+		printf("\nLe tableau est plein. Impossible d'ajouter plus d'auteurs.\n");
 	}
 	//printf("taille tableau apres ajout: %d", lengthTab);
 

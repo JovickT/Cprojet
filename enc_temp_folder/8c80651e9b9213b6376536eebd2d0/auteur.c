@@ -105,7 +105,9 @@ void modifierAuteur(int indice) {
 	printf("|\n");
 
 	printf("Voulez-vous modifier le nom ? (Y/N): ");
-	if (scanf("%c", &updNom) == "Y" || scanf("%c", &updNom) == "y") {
+	scanf("%c", &updNom);
+	printf("\ndebug: %c", updNom);
+	/*if (updNom == "Y") {
 		printf("Nom: %s", tab[indice].nom);
 		if (scanf("%s", &nom) == "") {
 			tab[indice].nom;
@@ -113,46 +115,9 @@ void modifierAuteur(int indice) {
 			*tab[indice].nom = nom;
 		}
 	}else {
-		printf("Voulez-vous modifier le Prenom ? (Y/N): ");
-		if (scanf("%c", &updPrenom) == "Y" || scanf("%c", &updPrenom) == "y") {
-			printf("\nPrenom: %s", tab[indice].prenom);
-			if (scanf("%s", &prenom) == "") {
-				tab[indice].prenom;
-			}
-			else {
-				*tab[indice].prenom = prenom;
-			}
-		}
-		else {
-			printf("Voulez-vous modifier la Date de naissance ? (Y/N): ");
-			if (scanf("%c", &updDn) == "Y" || scanf("%c", &updDn) == "y") {
-				printf("\nDate de naissance: %s", tab[indice].dateNaissance);
-				if (scanf("%s", &dateNaissance) == "") {
-					tab[indice].dateNaissance;
-				}
-				else {
-					*tab[indice].dateNaissance = dateNaissance;
-				}
-			}
-			else {
-				printf("Voulez-vous modifier la Date de deces ? (Y/N): ");
-				if (scanf("%c", &updDd) == "Y" || scanf("%c", &updDd) == "y") {
-					printf("\nDate de dece: %s", tab[indice].dateNaissance);
-					if (scanf("%s", &dateNaissance) == "") {
-						tab[indice].dateNaissance;
-					}
-					else {
-						*tab[indice].dateNaissance = dateNaissance;
-					}
-				}
-			}
-		}
-	}
+		printf("Mofication terminé !!");
+	}*/
 
-	
-
-	printf("Mofication terminé !!");
-
-	listAuteur();
+	//listAuteur();
 
 }

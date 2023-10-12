@@ -5,6 +5,8 @@
 
 void start() {
 	int nav;
+	int indice;
+	int modifier = 0;
 	int action;
 	char choixNav[20];
 	int valide = 0;
@@ -31,11 +33,13 @@ void start() {
 		valide = nav;
 	}
 
+	
 	printf("\nChoisissez une actions !!\n\n");
 	printf("Ajouter (Ajouter = 1) un %s \n", choixNav);
 	printf("Modifier (Modifier = 2) un %s \n", choixNav);
 	printf("Supprimer (Supprimer = 3) un %s \n",choixNav);
 	scanf("%d", &action);
+	
 	if (action == 1) {
 		if (nav == 1) {
 			ajouterAuteur();
@@ -48,10 +52,20 @@ void start() {
 		}
 	}
 	else if (action == 2) {
-		//ajouterEditeur();
+		printf("Tapez l'ID de l'entité que vous voulez modfier \n");
+		scanf("%d", &indice);
+		modifierAuteur(indice);
+
+		printf("\nVoulez-vous modifier de nouveau ? (oui = 1 / non = 0)");
+		scanf("%d", &modifier);
+		while (modifier == 1) {
+			modifierAuteur(indice);
+		}
 	}
 	else if (action == 3) {
 		//ajouterLivre();
+	}else {
+		valide= -1;
 	}
 
 
