@@ -1,6 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include "../Editeur/editeur.h"
-#define _CRT_SECURE_NO_WARNINGS
 
 struct livre {
 	int id;
@@ -11,17 +11,19 @@ struct livre {
 	//struct Auteurs[];
 };
 
-int printStructLivre(struct livre l) {
-	return (l.id);
-}
+struct livre tab[50];
+int lengthTabLivre = 5;
+
+int id;
+char titre[250];
+char datePublication[12];
+double prix;
 
 void displayHeaderTabLivre() {
 	printf("|ID |Titre              |Date de Publication |Prix| \n");
 }
 
 void listLivre() {
-
-	struct livre tab[20];
 
 	struct livre l1 = { 0,"Candide","2017",3.50 };
 	struct livre l2 = { 1,"L'Etranger","2002",2.50 };
@@ -35,9 +37,7 @@ void listLivre() {
 	tab[3] = l4;
 	tab[4] = l5;
 
-	int lengthTab = 5;
-
-	for (int i = 0; i < lengthTab; i++)
+	for (int i = 0; i < lengthTabLivre; i++)
 	{
 		printf("|%d", tab[i].id);
 		printf("  |%s", tab[i].titre);
@@ -47,4 +47,37 @@ void listLivre() {
 	}
 	
 	
+}
+
+void ajouterLivre() {
+
+	printf("Titre: ");
+	scanf("%s", &titre);
+
+	printf("\nDate de Publication: ");
+	scanf("%s", &datePublication);
+
+	printf("\nPrix: ");
+	scanf("%g", &prix);
+
+
+	struct livre nouveauLivre;
+	nouveauLivre.id = lengthTabLivre;
+	strncpy(nouveauLivre.titre, titre, sizeof(nouveauLivre.titre));
+	strncpy(nouveauLivre.datePublication, datePublication, sizeof(nouveauLivre.datePublication));
+	strncpy(nouveauLivre.prix, prix, sizeof(nouveauLivre.prix));
+
+	// Ajoutez le nouvel auteur au tableau existant
+	if (lengthTabLivre < 150) {
+		tab[lengthTabLivre] = nouveauLivre;
+		lengthTabLivre++;
+
+		printf("\nAuteur ajoute avec succes.\n");
+	}
+	else {
+		printf("\nLe tableau est plein. Impossible d'ajouter plus de livre.\n");
+	}
+	//printf("taille tableau apres ajout: %d", lengthTab);
+
+	listLivre();
 }

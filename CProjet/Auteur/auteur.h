@@ -3,6 +3,7 @@
 
 struct auteur;
 void listAuteur();
+void ajouterAuteur();
 void displayHeaderTabAuteur();
 
 #endif AUTEUR_H

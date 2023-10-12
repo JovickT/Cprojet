@@ -3,6 +3,7 @@
 
 struct editeur;
 void listEditeur();
+void ajouterEditeur();
 void displayHeaderTabEditeur();
 
 #endif EDITEUR_H

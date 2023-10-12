@@ -1,10 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "../Auteur/auteur.h"
 #include "../Editeur/editeur.h"
 #include "../Livre/livre.h"
 #include "../begin/beginning.h"
 
-#define _CRT_secure_no_warnings
 
 enum navs {
 	auteurs = 1,
