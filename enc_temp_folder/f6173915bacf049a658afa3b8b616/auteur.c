@@ -96,6 +96,7 @@ void modifierAuteur(int indice) {
 	char updPrenom;
 	char updDn;
 	char updDd;
+	char buffer[100];
 	displayHeaderTabAuteur();
 	printf("|%d", tab[indice].id);
 	printf("  |%s", tab[indice].nom);
@@ -105,19 +106,36 @@ void modifierAuteur(int indice) {
 	printf("|\n");
 
 	printf("Voulez-vous modifier le nom ? (Y/N): ");
-	scanf("%c", &updNom);
-	printf("\ndebug: %c", updNom);
-	/*if (updNom == "Y") {
-		printf("Nom: %s", tab[indice].nom);
-		if (scanf("%s", &nom) == "") {
-			tab[indice].nom;
-		}else {
-			*tab[indice].nom = nom;
-		}
-	}else {
-		printf("Mofication terminé !!");
-	}*/
+	scanf(" %c", &updNom);
 
-	//listAuteur();
+	printf("\nupdNom: %c", updNom);
+	if (updNom == 'Y' || updNom == 'y') {
+		printf("\nNom: %s \nindice: %d", tab[indice].nom,indice);
+		scanf("%s", tab[indice].nom);
 
+		printf("\nNouveau nom: %s", tab[indice].nom);
+
+	}
+
+	printf("Voulez-vous modifier le prenom ? (Y/N): ");
+	scanf(" %c", &updPrenom);
+
+	if (updPrenom == 'Y' || updPrenom == 'y') {
+		printf("\nNom: %s \nindice: %d", tab[indice].prenom, indice);
+		scanf("%s", tab[indice].prenom);
+
+		printf("\nNouveau nom: %s", tab[indice].nom);
+
+	}
+
+	printf("\nMofication termine !!\n");
+
+	listAuteur();
+}
+
+void supprimerAuteur(int indice){
+
+	listAuteur();
+
+	printf("\nl'auteur a ete supprimer avec succes !");
 }

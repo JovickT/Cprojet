@@ -59,9 +59,9 @@ void start() {
 			modifierAuteur(indice);
 			printf("\nVoulez-vous modifier de nouveau ? (oui = 1 / non = 0)");
 			scanf("%d", &modifier);
+			printf("Tapez l'ID de l'entite que vous voulez modfier \n");
+			scanf("%d", &indice);
 			while (modifier == 1) {
-				printf("Tapez l'ID de l'entite que vous voulez modfier \n");
-				scanf("%d", &indice);
 				modifierAuteur(indice);
 				modifier = -1;
 			}
